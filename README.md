@@ -44,8 +44,8 @@ python3 shield_mppi_main.py
 
 | Method        | k = 20                             | k = 1000                              |
 |---------------|------------------------------------|---------------------------------------|
-| Standard MPPI | ![](gifs/standard_k20.gif)         | ![](gifs/standard_k1000.gif)          |
-| Shield-MPPI   | ![](gifs/shield_k20.gif)           | ![](gifs/shield_k1000.gif)            |
+| Standard MPPI | ![](gifs/standard_MPPI_k20.gif)         | ![](gifs/standard_MPPI_k1000.gif)          |
+| Shield-MPPI   | ![](gifs/shield_MPPI_k20.gif)           | ![](gifs/shield_MPPI_k1000.gif)            |
 
 
 ---
