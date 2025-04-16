@@ -2,15 +2,8 @@
 
 This repository provides a GPU-accelerated implementation of the **Shield Model Predictive Path Integral (Shield-MPPI)** algorithm using **PyTorch**. Shield-MPPI integrates Control Barrier Functions (CBFs) into the MPPI framework, enhancing safety and robustness in trajectory optimization.
 
-## 🔍 What is Shield-MPPI?
 
-Shield-MPPI is a two-stage control framework:
-1. **Stage 1**: Generate diverse control samples using standard MPPI.
-2. **Stage 2**: Refine selected samples to satisfy safety constraints via Control Barrier Functions (CBFs).
-
-This structure enables **real-time, safety-aware trajectory optimization** for autonomous systems.
-
-> 🔗 Reference:
+## 🔗 Reference:
 > - Yin, J., Dawson, C., Fan, C., & Tsiotras, P. (2023).  
 >   *Shield model predictive path integral: A computationally efficient robust MPC method using control barrier functions*.  
 >   **IEEE Robotics and Automation Letters, 8(11), 7106-7113.**  
