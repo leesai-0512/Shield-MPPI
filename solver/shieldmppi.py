@@ -486,8 +486,8 @@ class MPPIController():
         w_epsilon = torch.sum(w_expanded * noise, dim=0)
         opt_u.copy_(u + w_epsilon)
         self.before_update = opt_u.clone()
-        opt_u = self.update_control_input(v=opt_u)
-        opt_u = self.apply_constraint(opt_u)
+        # opt_u = self.update_control_input(v=opt_u)
+        # opt_u = self.apply_constraint(opt_u)
         self.u_prev.copy_(opt_u)
 
 

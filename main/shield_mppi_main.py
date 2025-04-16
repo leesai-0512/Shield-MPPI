@@ -29,8 +29,8 @@ if __name__ == "__main__":
     # 로봇 및 MPPI 컨트롤러 초기화
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(device)
-    env_name = "shield_mppi_test"
-    batch_size = 1000
+    env_name = "shield_mppi_wo_second_stage"
+    batch_size = 100
     dt = 0.03
     state = torch.tensor([0.0, 0.0, -math.pi/6], device=device)
     radius  = 0.3
@@ -102,9 +102,9 @@ if __name__ == "__main__":
         # 로봇 상태 업데이트
         sim.state = new_state
     
-        sim.update_plot(optimal_traj=optimal_traj, predicted_traj=sampled_trajectory,opt_clustered_traj = None,
-                        best_trajectory = before_optimal_traj,
-                        clustered_trajs=dict((str(label), traj) for label, traj in clustered_trajs))
+        # sim.update_plot(optimal_traj=optimal_traj, predicted_traj=sampled_trajectory,opt_clustered_traj = None,
+        #                 best_trajectory = before_optimal_traj,
+        #                 clustered_trajs=dict((str(label), traj) for label, traj in clustered_trajs))
         
         util.optimal_input_txt_data(optimal_input[0],log_dir)
         util.error_txt_data(mppi.dist,log_dir)
