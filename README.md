@@ -42,7 +42,7 @@ python3 shield_mppi_main.py
 
 ### Performance Comparison: Standard MPPI vs Shield-MPPI
 
-| Method        | k = 20                             | k = 1000                              |
+| Method        | K = 20                             | K = 1000                              |
 |---------------|------------------------------------|---------------------------------------|
 | Standard MPPI | ![](gifs/standard_MPPI_k20.gif)         | ![](gifs/standard_MPPI_k1000.gif)          |
 | Shield-MPPI   | ![](gifs/shield_MPPI_k20.gif)           | ![](gifs/shield_MPPI_k1000.gif)            |
