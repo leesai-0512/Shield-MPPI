@@ -35,3 +35,19 @@ conda install pytorch=2.5.1 torchvision pytorch-cuda=11.8 -c pytorch -c nvidia
 git clone <repository_url>
 cd <repository_name>/main
 python3 shield_mppi_main.py
+```
+---
+
+## 🎬 Experiment Results
+
+### Performance Comparison: Standard MPPI vs Shield-MPPI
+
+| Method        | k = 20                             | k = 1000                              |
+|---------------|------------------------------------|---------------------------------------|
+| Standard MPPI | ![](gifs/standard_k20.gif)         | ![](gifs/standard_k1000.gif)          |
+| Shield-MPPI   | ![](gifs/shield_k20.gif)           | ![](gifs/shield_k1000.gif)            |
+
+
+---
+
+
