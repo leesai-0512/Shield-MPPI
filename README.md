@@ -29,7 +29,7 @@ This implementation builds upon the base MPPI structure provided by the followin
 conda create -n python310 python=3.10
 conda activate python310
 conda install pytorch=2.5.1 torchvision pytorch-cuda=11.8 -c pytorch -c nvidia
-
+```
 ### Installation And Run
 ```bash
 git clone <repository_url>
