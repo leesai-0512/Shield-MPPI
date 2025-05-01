@@ -30,7 +30,7 @@ if __name__ == "__main__":
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(device)
     env_name = "shield_mppi_wo_second_stage"
-    batch_size = 50
+    batch_size = 30
     dt = 0.03
     state = torch.tensor([0.0, 0.0, -math.pi/6], device=device)
     radius  = 0.3

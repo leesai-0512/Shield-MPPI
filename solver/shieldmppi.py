@@ -472,7 +472,7 @@ class MPPIController():
         
         noise.copy_(self.generateNoiseAndSampling())
         v.copy_(noise + u)
-        # v = self.apply_constraint(v)
+        v = self.apply_constraint(v)
         noise.copy_(v-u)
         trajectory = self.predict_trajectory(x0, v)
         ref_path = self.get_nearest_waypoints(trajectory,200,True)

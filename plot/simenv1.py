@@ -304,12 +304,38 @@ class SIMULATIONENV1():
             color='gray', linestyle='-', linewidth=3, #label='Right Boundary'
         )
 
+
+        # 1. 현재 라벨과 핸들 가져오기
+        handles, labels = self.ax.get_legend_handles_labels()
+
+        # 2. 원하는 라벨 순서를 정의
+        desired_order = [
+            "Sampled Trajectories",
+            "Sampled trajectory of cluster_0",  # 예시 클러스터들
+            "Sampled trajectory of cluster_1",
+            "Before Optimal Trajectory",
+            "before_filter Trajectory",
+            "After CBF-augmented Stage",
+            "After Constraint Recovery Stage",
+            "Optimal trajectory of cluster_0",  # 최적 클러스터들
+            "Optimal trajectory of cluster_1"
+        ]
+
+
         
-        # self.ax.legend(
-        #     fontsize=40,
-        #     loc='center left',
-        #     bbox_to_anchor=(1.05, 0.5),
-        #     borderaxespad=0.,
-        #     frameon=True  # 테두리 없애기
-        # )
+        # 3. 라벨 순서에 맞게 핸들과 라벨 정렬
+        ordered = [(h_, l_) for l in desired_order for h_, l_ in zip(handles, labels) if l == l_]
+        handles_ordered, labels_ordered = zip(*ordered)
+
+        # 4. legend()에 순서대로 전달
+        self.ax.legend(
+            handles_ordered,
+            labels_ordered,
+            fontsize=40,
+            loc='center left',
+            bbox_to_anchor=(1.05, 0.5),
+            borderaxespad=0.,
+            frameon=True
+        )
+
         self.ax.figure.canvas.draw()
