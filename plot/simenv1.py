@@ -305,11 +305,11 @@ class SIMULATIONENV1():
         )
 
         
-        self.ax.legend(
-            fontsize=40,
-            loc='center left',
-            bbox_to_anchor=(1.05, 0.5),
-            borderaxespad=0.,
-            frameon=True  # 테두리 없애기
-        )
+        # self.ax.legend(
+        #     fontsize=40,
+        #     loc='center left',
+        #     bbox_to_anchor=(1.05, 0.5),
+        #     borderaxespad=0.,
+        #     frameon=True  # 테두리 없애기
+        # )
         self.ax.figure.canvas.draw()
