@@ -70,7 +70,7 @@ class SIMULATIONENV1():
             spine.set_linewidth(5)
             spine.set_color("black")
 
-        # ax.grid(True, linewidth=5, color='black', alpha=0.5)
+        ax.grid(True, linewidth=5, color='black', alpha=0.5)
 
     def generate_complex_track(self,num_points=500, device='cuda', velocity=1.5):
         """
@@ -244,7 +244,7 @@ class SIMULATIONENV1():
             self.ax.plot(
                 optimal_traj[:, 0].cpu().numpy(),
                 optimal_traj[:, 1].cpu().numpy(),
-                linestyle='-', color='cyan', label="After Constraint Recovery Stage", linewidth=10.0
+                linestyle='-', color='cyan', label="After Second Layer", linewidth=10.0
             )
 
         # 최적 경로 플롯
@@ -271,7 +271,7 @@ class SIMULATIONENV1():
             self.ax.plot(
                 best_trajectory[:, 0].cpu().numpy(),
                 best_trajectory[:, 1].cpu().numpy(),
-                linestyle='--', color='gray', label="After CBF-augmented Stage",linewidth=10.0
+                linestyle='--', color='gray', label="After Frist Layer",linewidth=10.0
             )
 
         # 가중평균 계산 후 클러스터별 경로 플롯 (점선 스타일)
@@ -315,8 +315,8 @@ class SIMULATIONENV1():
             "Sampled trajectory of cluster_1",
             "Before Optimal Trajectory",
             "before_filter Trajectory",
-            "After CBF-augmented Stage",
-            "After Constraint Recovery Stage",
+            "After First Layer",
+            "After Second Layer",
             "Optimal trajectory of cluster_0",  # 최적 클러스터들
             "Optimal trajectory of cluster_1"
         ]
