@@ -472,10 +472,9 @@ class MPPIController():
         
         noise.copy_(self.generateNoiseAndSampling())
         v.copy_(noise + u)
-        v = self.apply_constraint(v)
+        # v = self.apply_constraint(v)
         noise.copy_(v-u)
         trajectory = self.predict_trajectory(x0, v)
-        # trajectory, v = self.update_control_inputs(trajectory=trajectory, v = v , x0 = x0)
         ref_path = self.get_nearest_waypoints(trajectory,200,True)
         S += self.compute_total_cost(trajectory = trajectory, v = v, ref_path=ref_path)
         S += self.compute_cbf_cost(trajectory=trajectory,ref_path=ref_path)
@@ -486,8 +485,8 @@ class MPPIController():
         w_epsilon = torch.sum(w_expanded * noise, dim=0)
         opt_u.copy_(u + w_epsilon)
         self.before_update = opt_u.clone()
-        # opt_u = self.update_control_input(v=opt_u)
-        # opt_u = self.apply_constraint(opt_u)
+        opt_u = self.update_control_input(v=opt_u)
+        opt_u = self.apply_constraint(opt_u)
         self.u_prev.copy_(opt_u)
 
 

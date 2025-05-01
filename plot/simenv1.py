@@ -70,7 +70,7 @@ class SIMULATIONENV1():
             spine.set_linewidth(5)
             spine.set_color("black")
 
-        ax.grid(True, linewidth=5, color='black', alpha=0.5)
+        # ax.grid(True, linewidth=5, color='black', alpha=0.5)
 
     def generate_complex_track(self,num_points=500, device='cuda', velocity=1.5):
         """
